@@ -3,7 +3,6 @@
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
-import Image from "next/image";
 
 // Register GSAP TextPlugin
 gsap.registerPlugin(TextPlugin);
@@ -146,7 +145,7 @@ const Portfolio = () => {
           <h2 className="text-3xl font-semibold mb-8 text-white">Contact</h2>
           <p className="text-lg leading-relaxed mb-4 text-white">
             Feel free to reach out to me for collaboration or freelance work.
-            I'm always open to new opportunities.
+            Am always open to new opportunities.
           </p>
           <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-6">
             <div>
