@@ -54,15 +54,17 @@ const Portfolio = () => {
 
 
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    const formData = {
-      name: e.target.name.value,
-      email: e.target.email.value,
-      message: e.target.message.value
-    };
   
+    const form = e.target as HTMLFormElement; // Explicitly cast to form element
+  
+    const formData = {
+      name: (form.elements.namedItem("name") as HTMLInputElement)?.value,
+      email: (form.elements.namedItem("email") as HTMLInputElement)?.value,
+      message: (form.elements.namedItem("message") as HTMLInputElement)?.value,
+    };
+    
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
